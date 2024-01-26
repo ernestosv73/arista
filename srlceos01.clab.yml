@@ -13,12 +13,10 @@ topology:
       kind: srl
       
     ceos:
-      kind: arista_ceos
-      image: ceos:4.25.1F
-      exec: 
-          - /sbin/init systemd.setenv=INTFTYPE=eth systemd.setenv=ETBA=1
-          - systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 systemd.setenv=CEOS=1
-          - systemd.setenv=EOS_PLATFORM=ceoslab systemd.setenv=container=docker
-          - systemd.setenv=MAPETH0=1 systemd.setenv=MGMT_INTF=eth0
+      kind: ceos
+      image: ceos:4.31.1F
+      binds:
+        - mymapping.json:/mnt/flash/EosIntfMapping.json:ro
+      
   links:
     - endpoints: ["srl:e1-1", "ceos:eth1"]
