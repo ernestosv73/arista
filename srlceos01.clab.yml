@@ -14,11 +14,7 @@ topology:
       
     ceos:
       kind: arista_ceos
-      image: ceos:4.25.1F 
-    cmd: 
-       bash /sbin/init systemd.setenv=INTFTYPE=eth systemd.setenv=ETBA=1
-       bash systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 systemd.setenv=CEOS=1 
-       bash systemd.setenv=EOS_PLATFORM=ceoslab systemd.setenv=container=docker
-       bash systemd.setenv=MAPETH0=1 systemd.setenv=MGMT_INTF=eth0
+      image: ceos:4.25.1F:${CEOS:1} 
+    
   links:
     - endpoints: ["srl:e1-1", "ceos:eth1"]
