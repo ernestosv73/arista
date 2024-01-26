@@ -2,13 +2,19 @@
 name: srlceos01
 
 topology:
+  kinds: 
+
+    srl:
+      image: ghcr.io/nokia/srlinux:23.10.1
+      type: ixrd3
+
   nodes:
     srl:
-      kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux
+      kind: srl
+      type: ixrd3
     ceos:
       kind: arista_ceos
-      image: ceos:4.25.0F
+      image: ceos:4.25.1F
 
   links:
     - endpoints: ["srl:e1-1", "ceos:eth1"]
