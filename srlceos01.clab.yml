@@ -11,7 +11,7 @@ topology:
   nodes:
     srl:
       kind: srl
-      type: ixrd3
+      
     ceos:
       kind: arista_ceos
       image: ceos:4.25.1F
