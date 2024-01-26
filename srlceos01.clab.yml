@@ -34,5 +34,5 @@ topology:
   links:
     - endpoints: ["srl:e1-1", "ceos:eth1"]
     - endpoints: ["router1:eth1", "ceos:eth2"]
-    - endpoints: ["PC1", "ceos:eth3"]
+    - endpoints: ["PC1:eth1", "ceos:eth3"]
     
