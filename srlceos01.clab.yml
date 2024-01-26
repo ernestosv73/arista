@@ -24,6 +24,12 @@ topology:
       image: docker.io/esanchezv/kaliipv6v2.1:latest
       exec:
       - ip -6 route del default dev eth0  
+
+    PC3:
+      kind: linux
+      image: praqma/network-multitool:extra
+      exec:
+      - ip -6 route del default dev eth0    
       
     ceos:
       kind: ceos
@@ -35,4 +41,5 @@ topology:
     - endpoints: ["srl:e1-1", "ceos:eth1"]
     - endpoints: ["router1:eth1", "ceos:eth2"]
     - endpoints: ["PC1:eth1", "ceos:eth3"]
+    - endpoints: ["PC3:eth1", "ceos:eth4"]
     
