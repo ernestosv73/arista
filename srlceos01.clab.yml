@@ -34,8 +34,8 @@ topology:
     ceos:
       kind: ceos
       image: ceos:4.31.1F
-      #binds:
-        #- mymapping.json:/mnt/flash/EosIntfMapping.json:ro
+      binds:
+        - mymapping.json:/mnt/flash/EosIntfMapping.json:ro
       
   links:
     - endpoints: ["srl:e1-1", "ceos:eth1"]
