@@ -38,8 +38,8 @@ topology:
         - mymapping.json:/mnt/flash/EosIntfMapping.json:ro
       
   links:
-    - endpoints: ["srl:e1-1", "ceos:et1"]
-    - endpoints: ["router1:eth1", "ceos:et2"]
-    - endpoints: ["PC1:eth1", "ceos:et3"]
-    - endpoints: ["PC3:eth1", "ceos:et4"]
+    - endpoints: ["srl:e1-1", "ceos:eth1"]
+    - endpoints: ["router1:eth1", "ceos:eth2"]
+    - endpoints: ["PC1:eth1", "ceos:eth3"]
+    - endpoints: ["PC3:eth1", "ceos:eth4"]
     
